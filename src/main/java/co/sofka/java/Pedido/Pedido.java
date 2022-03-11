@@ -1,6 +1,7 @@
 package co.sofka.java.Pedido;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import co.sofka.java.Pedido.entity.Estado;
 import co.sofka.java.Pedido.entity.Factura;
 import co.sofka.java.Pedido.entity.value.*;
@@ -8,13 +9,14 @@ import co.sofka.java.Pedido.events.*;
 import co.sofka.java.Pedido.value.MedioDePago;
 import co.sofka.java.Pedido.value.PedidoId;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Pedido extends AggregateEvent<PedidoId> {
-    private ClienteId clienteId;
-    private Estado estado;
-    private Factura factura;
-    private MedioDePago medioDePago;
+    protected ClienteId clienteId;
+    protected Estado estado;
+    protected Factura factura;
+    protected MedioDePago medioDePago;
 
     private Pedido(PedidoId entityId){
         super(entityId);
@@ -24,6 +26,13 @@ public class Pedido extends AggregateEvent<PedidoId> {
     public Pedido(PedidoId entityId, Estado estado) {
         super(entityId);
         appendChange(new PedidoCreado(estado)).apply();
+    }
+
+    //Método para acceder a un pedido ya creado
+    public static Pedido from(PedidoId pedidoId, List<DomainEvent> events){
+        var pedido = new Pedido(pedidoId);
+        events.forEach(pedido::applyEvent);
+        return pedido;
     }
 
     public void generarFactura (FacturaId facturaId, Fecha fecha, Direccion direccion){
@@ -51,6 +60,7 @@ public class Pedido extends AggregateEvent<PedidoId> {
         Objects.requireNonNull(medioDePago);
         appendChange(new MedioDePagoAgregado(medioDePago)).apply();
     }
+
 
     public ClienteId ClienteId() {
         return clienteId;
