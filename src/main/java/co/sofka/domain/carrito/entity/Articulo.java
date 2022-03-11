@@ -26,11 +26,11 @@ public class Articulo extends Entity<ArticuloId> {
         this.enStock = new EnStock(EnStock.State.NO_DISPONIBLE);
     }
 
-    public Cantidad Cantidad() {
+    public Cantidad cantidad() {
         return cantidad;
     }
 
-    public EnStock EnStock() {
+    public EnStock enStock() {
         return enStock;
     }
 }
