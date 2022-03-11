@@ -2,6 +2,7 @@ package co.sofka.java.Pedido;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.sofka.java.Pedido.entity.Cliente;
 import co.sofka.java.Pedido.entity.Estado;
 import co.sofka.java.Pedido.entity.Factura;
 import co.sofka.java.Pedido.entity.value.*;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Pedido extends AggregateEvent<PedidoId> {
-    protected ClienteId clienteId;
+    protected Cliente cliente;
     protected Estado estado;
     protected Factura factura;
     protected MedioDePago medioDePago;
@@ -62,8 +63,8 @@ public class Pedido extends AggregateEvent<PedidoId> {
     }
 
 
-    public ClienteId ClienteId() {
-        return clienteId;
+    public Cliente Cliente() {
+        return cliente;
     }
 
     public Estado Estado() {

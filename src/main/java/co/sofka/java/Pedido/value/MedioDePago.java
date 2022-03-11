@@ -2,10 +2,17 @@ package co.sofka.java.Pedido.value;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-public class MedioDePago implements ValueObject<String> {
+import java.util.Objects;
 
-    @Override
-    public String value() {
-        return null;
+public class MedioDePago implements ValueObject<String> {
+    private final String value;
+
+    public MedioDePago(String medioDePago) {
+        this.value = Objects.requireNonNull(medioDePago);
     }
+
+    public String value(){
+        return value;
+    }
+
 }

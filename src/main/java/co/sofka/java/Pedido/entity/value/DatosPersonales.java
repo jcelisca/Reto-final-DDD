@@ -2,6 +2,8 @@ package co.sofka.java.Pedido.entity.value;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.util.Objects;
+
 public class DatosPersonales implements ValueObject<DatosPersonales.Props> {
     private final String nombre;
     private final String apellido;
@@ -9,9 +11,15 @@ public class DatosPersonales implements ValueObject<DatosPersonales.Props> {
     private final String celular;
 
     public DatosPersonales(String nombre, String apellido, String email, String celular) {
-        this.nombre = nombre;
+        this.nombre = Objects.requireNonNull(nombre);
+        if(this.nombre.length() < 3){
+            throw new IllegalArgumentException("El nombre debe tener mas de 3 letras");
+        }
         this.apellido = apellido;
-        this.email = email;
+        this.email = Objects.requireNonNull(email);
+        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")){
+            throw new IllegalArgumentException("El email no es válido");
+        }
         this.celular = celular;
     }
 
