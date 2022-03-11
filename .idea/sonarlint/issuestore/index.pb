@@ -27,12 +27,6 @@ r
 Bsrc/main/java/co/sofka/java/Dispositivo/entity/value/Cargador.java,b\a\ba10d4ba2471dd7b23029bd31665f00136975282
 s
 Csrc/main/java/co/sofka/java/Dispositivo/entity/value/Descuento.java,2\7\2797b1242c38eeb8065423f53bb8437cc9142f0e
-`
-0src/main/java/co/sofka/java/Carrito/Carrito.java,b\e\be22540ddcb2a0b3a425d8828f16368062bbd6cc
-f
-6src/main/java/co/sofka/java/Carrito/entity/Compra.java,d\7\d72d66d9b0280ab7770ac09c68b71e850ebcb21a
-n
->src/main/java/co/sofka/java/Carrito/entity/Disponibilidad.java,2\3\238caa8bb1b78e1e4a848d1e66f40c81fdc07f6f
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 n
@@ -43,8 +37,6 @@ n
 >src/main/java/co/sofka/java/Pedido/entity/value/ClienteId.java,b\2\b250d71cfc206e629d9587304d37082f668d6916
 r
 Bsrc/main/java/co/sofka/java/Pedido/events/MedioDePagoAgregado.java,c\5\c50a53f7e9ea0f93e2330418f89f4788d999839e
-v
-Fsrc/main/java/co/sofka/java/Pedido/events/DatosClienteActualizado.java,6\7\67adce13cbd1af0532b1a76e4b54590607f58e49
 k
 ;src/main/java/co/sofka/java/Pedido/events/PedidoCreado.java,3\4\343886100725e4ee7f01b8608c065aacab2c5a31
 n
