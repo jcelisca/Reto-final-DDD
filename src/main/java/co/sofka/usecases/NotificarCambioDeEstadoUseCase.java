@@ -15,7 +15,6 @@ public class NotificarCambioDeEstadoUseCase extends UseCase<TriggeredEvent<Estad
     public void executeUseCase(TriggeredEvent<EstadoDeEnvioCambiado> input) {
         var event = input.getDomainEvent();
         var service = getService(EmailService.class).orElseThrow();
-        //var estado = event.getEstado();
 
         var events = repository().getEventsBy("pedido", event.aggregateRootId());
         var pedido = Pedido.from(PedidoId.of(event.aggregateRootId()), events);
