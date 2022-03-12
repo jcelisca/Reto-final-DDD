@@ -1,12 +1,11 @@
 package co.sofka.domain.dispositivo;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.sofka.domain.dispositivo.entity.Celular;
 import co.sofka.domain.dispositivo.entity.Promocion;
 import co.sofka.domain.dispositivo.entity.Referencia;
 import co.sofka.domain.dispositivo.events.DispositivoCreado;
 import co.sofka.domain.dispositivo.events.PromocionAgregada;
-import co.sofka.domain.dispositivo.events.ReferenciaAgregada;
+import co.sofka.domain.dispositivo.events.ReferenciaCambiada;
 
 public class DispositivoChange extends EventChange {
 
@@ -24,7 +23,7 @@ public class DispositivoChange extends EventChange {
             dispositivo.promocion = new Promocion(event.getPromocionId(),event.getDescuento());
         });
 
-        apply((ReferenciaAgregada event) ->{
+        apply((ReferenciaCambiada event) ->{
             dispositivo.referencia = new Referencia(event.getReferenciaId());
         });
     }

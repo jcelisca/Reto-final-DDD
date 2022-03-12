@@ -67,14 +67,10 @@ h
 8src/main/java/co/sofka/domain/pedido/entity/Factura.java,7\3\73d49040fafa603af4fb43c62ec636b2995bbfe7
 w
 Gsrc/main/java/co/sofka/domain/dispositivo/entity/value/PromocionId.java,f\b\fb6965171ad73c33ec91a6758367515cebe30884
-x
-Hsrc/main/java/co/sofka/domain/dispositivo/entity/value/ReferenciaId.java,2\9\29a6e6be1f464c2af9b9bc4c1933e8ee0bb9e1bc
 r
 Bsrc/main/java/co/sofka/domain/dispositivo/value/DispositivoId.java,2\1\217c681adfbaa2b4d041e17779d451463f2428a3
 f
 6src/main/java/co/sofka/domain/pedido/entity/Envio.java,7\5\7509b0c0f8d9924fd25cb1f23669b325f7c93113
-o
-?src/main/java/co/sofka/domain/dispositivo/entity/Promocion.java,c\b\cb82c8ce4d94a52c64f1495a35d24ba172b26a7d
 x
 Hsrc/main/java/co/sofka/domain/dispositivo/events/ReferenciaAgregada.java,6\3\634a3e71a5a3f53200d1d19ba8a9d1dd6034cac4
 m

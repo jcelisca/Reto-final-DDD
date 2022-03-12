@@ -8,7 +8,7 @@ import co.sofka.domain.dispositivo.entity.value.*;
 import co.sofka.domain.dispositivo.events.AlmacenamientoCelularActualizado;
 import co.sofka.domain.dispositivo.events.DispositivoCreado;
 import co.sofka.domain.dispositivo.events.PromocionAgregada;
-import co.sofka.domain.dispositivo.events.ReferenciaAgregada;
+import co.sofka.domain.dispositivo.events.ReferenciaCambiada;
 import co.sofka.domain.dispositivo.value.DispositivoId;
 
 import java.util.List;
@@ -42,11 +42,11 @@ public class Dispositivo extends AggregateEvent<DispositivoId> {
         appendChange(new AlmacenamientoCelularActualizado(especificaciones)).apply();
     }
 
-    public void agregarReferencia(ReferenciaId referenciaId, Audifonos audifonos, Cargador cargador){
+    public void cambiarReferencia(ReferenciaId referenciaId, Audifonos audifonos, Cargador cargador){
         Objects.requireNonNull(referenciaId);
         Objects.requireNonNull(audifonos);
         Objects.requireNonNull(cargador);
-        appendChange(new ReferenciaAgregada(referenciaId, audifonos, cargador)).apply();
+        appendChange(new ReferenciaCambiada(referenciaId, audifonos, cargador)).apply();
     }
 
     public void agregarPromocion(PromocionId promocionId, Descuento descuento){
