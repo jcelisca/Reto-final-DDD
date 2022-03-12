@@ -4,8 +4,6 @@ import co.com.sofka.domain.generic.EventChange;
 import co.sofka.domain.dispositivo.entity.Celular;
 import co.sofka.domain.dispositivo.entity.Promocion;
 import co.sofka.domain.dispositivo.entity.Referencia;
-import co.sofka.domain.dispositivo.entity.value.CelularId;
-import co.sofka.domain.dispositivo.events.AlmacenamientoCelularActualizado;
 import co.sofka.domain.dispositivo.events.DispositivoCreado;
 import co.sofka.domain.dispositivo.events.PromocionAgregada;
 import co.sofka.domain.dispositivo.events.ReferenciaAgregada;

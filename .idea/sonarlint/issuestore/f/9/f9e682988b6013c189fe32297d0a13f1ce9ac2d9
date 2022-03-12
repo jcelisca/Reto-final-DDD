@@ -1,5 +1,0 @@
-
-7
-java:S1116
-"Remove this empty statement.(Úÿ¼üÿÿÿÿ
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( òóe
