@@ -9,7 +9,7 @@ public class ClienteAgregado extends DomainEvent {
     private final DatosPersonales datosPersonales;
 
     public ClienteAgregado(ClienteId clienteId, DatosPersonales datosPersonales) {
-        super("pedido.clienteactualizado");
+        super("pedido.clienteagregado");
         this.clienteId = clienteId;
         this.datosPersonales = datosPersonales;
     }

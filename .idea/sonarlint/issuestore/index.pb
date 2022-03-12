@@ -23,8 +23,6 @@ x
 Hsrc/main/java/co/sofka/domain/carrito/entity/value/DetallesDeCompra.java,8\e\8e324eca94665c94d9b1ead209329c00481a4472
 p
 @src/main/java/co/sofka/domain/carrito/events/CompraGenerada.java,b\6\b6c2fdcc5381bf7ec19c142a412fa0979a516aea
-p
-@src/main/java/co/sofka/domain/pedido/events/ClienteAgregado.java,4\3\43ca83c947acfca3cbff3a539ae673cc8bd2e48f
 o
 ?src/main/java/co/sofka/domain/carrito/events/CarritoCreado.java,4\7\47f81baeacdb47e9d8d223f3ed5e317094c0b084
 h
@@ -47,8 +45,6 @@ p
 @src/main/java/co/sofka/domain/carrito/command/GenerarCompra.java,b\1\b196f1ddab3c165fa4901c68452ec32cde3ed35e
 h
 8src/main/java/co/sofka/domain/carrito/CarritoChange.java,a\e\aed39a19e3868f8b862ec09f167a5ae8a8dc6582
-o
-?src/main/java/co/sofka/domain/carrito/command/CrearCarrito.java,4\b\4b39dec7bfde3a62ee05e7a1750552f387e44db9
 p
 @src/main/java/co/sofka/domain/pedido/entity/value/ClienteId.java,5\5\5599d075791b9b2d48c4f49d22890fcf2be78942
 m
