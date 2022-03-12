@@ -4,13 +4,12 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.sofka.domain.carrito.command.GenerarCompra;
-import co.sofka.domain.carrito.entity.value.CompraId;
-import co.sofka.domain.carrito.entity.value.DetallesDeCompra;
+import co.sofka.domain.carrito.command.AgregarPedido;
 import co.sofka.domain.carrito.events.CarritoCreado;
-import co.sofka.domain.carrito.events.CompraGenerada;
+import co.sofka.domain.carrito.events.PedidoAgregado;
 import co.sofka.domain.carrito.value.CarritoId;
 import co.sofka.domain.carrito.value.Catalogo;
+import co.sofka.domain.pedido.value.PedidoId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,21 +21,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class GenerarCompraUseCaseTest {
+public class AgregarPedidoUseCaseTest {
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    void generarCompra(){
-
+    void agregarPedido(){
         //arrange
         var carritoId = CarritoId.of("ffff");
-        var compraId = CompraId.of("xxxx");
-        var detalles = new DetallesDeCompra("detalles de la compra reaizada");
-        var command = new GenerarCompra(carritoId, compraId, detalles);
+        var pedidoId = PedidoId.of("xxxx");
+        var command = new AgregarPedido(carritoId, pedidoId);
 
-        var usecase = new GenerarCompraUseCase();
+        var usecase = new AgregarPedidoUseCase();
         Mockito.when(repository.getEventsBy("ffff")).thenReturn(history());
         usecase.addRepository(repository);
 
@@ -48,21 +45,18 @@ public class GenerarCompraUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (CompraGenerada)events.get(0);
-        Assertions.assertEquals("carrito.compragenerada",event.type);
-        Assertions.assertEquals("xxxx", event.getCompraId().value());
-        Assertions.assertEquals("detalles de la compra reaizada", event.getDetallesDeCompra().value());
-
+        var event = (PedidoAgregado)events.get(0);
+        Assertions.assertEquals("carrito.pedidoagregado",event.type);
+        Assertions.assertEquals("xxxx", event.getPedidoId().value());
     }
 
     private List<DomainEvent> history(){
         List<String> lista = new ArrayList();
         lista.add("item 1");
         lista.add("item 2");
-        DetallesDeCompra detalles = new DetallesDeCompra("detalles de la compra reaizada");
         return List.of(
                 new CarritoCreado(new Catalogo(lista)),
-                new CompraGenerada(CompraId.of("1"),detalles)
+                new PedidoAgregado(PedidoId.of("gggg"))
         );
     }
 }

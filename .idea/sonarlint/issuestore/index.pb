@@ -29,8 +29,6 @@ h
 8src/main/java/co/sofka/domain/pedido/value/PedidoId.java,4\7\479de1026ac1c204d1c640d82cb3836f655cf5b1
 u
 Esrc/main/java/co/sofka/domain/carrito/events/DispositivoAgregado.java,4\8\481c512bb670c0c27e316d72a2b268ca0766e4e2
-p
-@src/main/java/co/sofka/domain/carrito/events/PedidoAgregado.java,6\8\68ef475e4837aa0030591150ec7e6bddc2cdeb73
 j
 :src/main/java/co/sofka/domain/carrito/entity/Articulo.java,d\2\d2b1e6f05cfbcdb927654ecda4f094a0996fdb2e
 h
