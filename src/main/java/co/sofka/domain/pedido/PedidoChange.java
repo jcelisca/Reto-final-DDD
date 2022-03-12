@@ -1,6 +1,7 @@
 package co.sofka.domain.pedido;
 
 import co.com.sofka.domain.generic.EventChange;
+import co.sofka.domain.pedido.command.CambiarEstadoDeEnvio;
 import co.sofka.domain.pedido.entity.Cliente;
 import co.sofka.domain.pedido.entity.Factura;
 import co.sofka.domain.pedido.events.*;
@@ -28,5 +29,6 @@ public class PedidoChange extends EventChange {
         apply((MedioDePagoAgregado event) ->{
             pedido.medioDePago = event.getMedioDePago();
         });
+
     }
 }

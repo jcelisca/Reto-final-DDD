@@ -11,7 +11,6 @@ import co.sofka.domain.carrito.entity.value.DetallesDeCompra;
 import co.sofka.domain.carrito.events.CarritoCreado;
 import co.sofka.domain.carrito.events.CompraGenerada;
 import co.sofka.domain.carrito.value.Catalogo;
-import co.sofka.domain.pedido.entity.value.ClienteId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

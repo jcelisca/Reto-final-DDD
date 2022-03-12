@@ -12,7 +12,7 @@ public class Envio extends Entity<EnvioId> {
         this.estado = new Estado(Estado.State.NO_ENTREGADO);
     }
 
-    public void cambiarEstadoEntregado(){
+    public void cambiarEstado(){
         this.estado = new Estado(Estado.State.ENTREGADO);
     }
 
