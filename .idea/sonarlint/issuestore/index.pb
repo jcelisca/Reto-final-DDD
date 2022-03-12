@@ -9,8 +9,6 @@ p
 @src/main/java/co/sofka/domain/pedido/entity/value/FacturaId.java,1\3\13bf22db388c937f687aa870ec0eb115ebb4ba13
 t
 Dsrc/main/java/co/sofka/domain/pedido/events/MedioDePagoAgregado.java,1\e\1e19cf281499210ea73124910f75a066ec32897c
-l
-<src/main/java/co/sofka/domain/pedido/entity/value/Fecha.java,f\1\f167328883f0d202913252922c4c8a0c9c514957
 j
 :src/main/java/co/sofka/domain/carrito/value/CarritoId.java,0\f\0f8b0185dba026ddf9b423b93bec56573e23cbe5
 i
@@ -21,8 +19,6 @@ o
 ?src/main/java/co/sofka/domain/carrito/entity/value/EnStock.java,c\7\c752e5784846d41b16a2e67520949f59119707b4
 r
 Bsrc/main/java/co/sofka/domain/carrito/entity/value/ArticuloId.java,e\b\eb590fc4a99a1bfa8b2f080105194a9396b66934
-p
-@src/main/java/co/sofka/domain/pedido/events/FacturaGenerada.java,5\5\55e3c6786eac5bda360759f7a0b36fed3f5eaeaa
 n
 >src/main/java/co/sofka/domain/pedido/entity/value/EnvioId.java,a\d\ad49c5566885ad0d94ce7d2f52bb2f0d91530112
 x

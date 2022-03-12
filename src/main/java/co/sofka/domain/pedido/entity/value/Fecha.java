@@ -2,21 +2,21 @@ package co.sofka.domain.pedido.entity.value;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class Fecha implements ValueObject<Date> {
-    private final Date value;
+public class Fecha implements ValueObject<LocalDate> {
+    private final LocalDate value;
 
-    public Fecha(Date value) {
+    public Fecha(LocalDate value) {
         this.value = value;
     }
 
     public Fecha() {
-        this(new Date());
+        this(LocalDate.now());
     }
 
     @Override
-    public Date value() {
+    public LocalDate value() {
         return value;
     }
 }
