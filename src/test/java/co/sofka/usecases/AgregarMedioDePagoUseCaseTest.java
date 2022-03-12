@@ -4,13 +4,11 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.sofka.domain.pedido.command.GenerarFactura;
-import co.sofka.domain.pedido.entity.value.Direccion;
+import co.sofka.domain.pedido.command.AgregarMedioDePago;
 import co.sofka.domain.pedido.entity.value.EnvioId;
-import co.sofka.domain.pedido.entity.value.FacturaId;
-import co.sofka.domain.pedido.entity.value.Fecha;
-import co.sofka.domain.pedido.events.FacturaGenerada;
+import co.sofka.domain.pedido.events.MedioDePagoAgregado;
 import co.sofka.domain.pedido.events.PedidoCreado;
+import co.sofka.domain.pedido.value.MedioDePago;
 import co.sofka.domain.pedido.value.PedidoId;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,25 +17,23 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class GenerarFacturaUseCaseTest {
+public class AgregarMedioDePagoUseCaseTest {
 
     @Mock
     private DomainEventRepository repository;
 
     @Test
-    void generarFactura(){
+    void agregarMedioDePago(){
+
         //arrange
         var pedidoId = PedidoId.of("dddd");
-        var facturaId = FacturaId.of("gggg");
-        var fecha = new Fecha(LocalDate.now());
-        var direccion = new Direccion("Medellin","Calle 23");
-        var command = new GenerarFactura(pedidoId, facturaId, fecha, direccion);
+        var medioDePago = new MedioDePago("Tarjeta de Credito");
+        var command = new AgregarMedioDePago(pedidoId,medioDePago);
 
-        var usecase = new GenerarFacturaUseCase();
+        var usecase = new AgregarMedioDePagoUseCase();
         Mockito.when(repository.getEventsBy("dddd")).thenReturn(history());
         usecase.addRepository(repository);
 
@@ -49,21 +45,16 @@ public class GenerarFacturaUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (FacturaGenerada)events.get(0);
-        Assertions.assertEquals("pedido.facturagenerada", event.type);
-        Assertions.assertEquals("gggg", event.getFacturaId().value());
-        Assertions.assertEquals(fecha, event.getFecha());
-        Assertions.assertEquals(direccion,event.getDireccion());
-
+        var event = (MedioDePagoAgregado)events.get(0);
+        Assertions.assertEquals("pedido.mediodepagoagregado", event.type);
+        Assertions.assertEquals("Tarjeta de Credito",event.getMedioDePago().value());
     }
 
-    private List<DomainEvent> history() {
-        var fecha1 = new Fecha(LocalDate.of(2021,10,10));
-        var direccion1 = new Direccion("Medellin","Calle 2");
+    private List<DomainEvent> history(){
+        var medioPago = new MedioDePago("efectivo");
         return List.of(
                 new PedidoCreado(EnvioId.of("dddd")),
-                new FacturaGenerada(FacturaId.of("1"), fecha1, direccion1)
+                new MedioDePagoAgregado(medioPago)
         );
     }
-
 }
