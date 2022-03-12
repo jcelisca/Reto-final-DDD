@@ -58,6 +58,10 @@ public class Pedido extends AggregateEvent<PedidoId> {
         appendChange(new MedioDePagoAgregado(medioDePago)).apply();
     }
 
+    public void cambiarEstadoEnvio(Estado estado){
+        appendChange(new EstadoDeEnvioCambiado(estado));
+    }
+
 
     public Cliente cliente() {
         return cliente;
