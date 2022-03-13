@@ -54,11 +54,11 @@ public class ActualizarDireccionFacturaUseCaseTest {
     }
 
     private List<DomainEvent> history(){
-        var fecha1 = new Fecha(LocalDate.of(2021,10,10));
-        var direccion1 = new Direccion("Medellin","Calle 2");
         return List.of(
                 new PedidoCreado(EnvioId.of("dddd")),
-                new FacturaGenerada(FacturaId.of("1"), fecha1, direccion1)
+                new FacturaGenerada(FacturaId.of("1"),
+                        new Fecha(LocalDate.of(2021,10,10)),
+                        new Direccion("Medellin","Calle 2"))
         );
     }
 }

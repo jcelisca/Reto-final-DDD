@@ -83,7 +83,8 @@ public class NotificarCambioDeEstadoUseCaseTest {
         return List.of(
                 new PedidoCreado(EnvioId.of("xxxx")),
                 new ClienteAgregado(ClienteId.of("dddd"),
-                        new DatosPersonales("Juan","perez","juan@email.com","567893"))
+                        new DatosPersonales("Juan",
+                                "perez","juan@email.com","567893"))
         );
     }
 }

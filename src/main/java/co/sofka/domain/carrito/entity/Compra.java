@@ -15,7 +15,7 @@ public class Compra extends Entity<CompraId> {
     }
 
     //Comportamiento
-    public void actualizarGuiaCompra(DetallesDeCompra detallesDeCompra){
+    public void actualizarDetalles(DetallesDeCompra detallesDeCompra){
         this.detallesDeCompra = Objects.requireNonNull(detallesDeCompra);
     }
 
